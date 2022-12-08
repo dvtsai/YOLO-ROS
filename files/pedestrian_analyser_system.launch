@@ -1,0 +1,50 @@
+<launch>
+
+<node pkg="pedestrian_analyser" type="main.py" name="pedestrian_analyser" output="screen">
+
+	<param name="display_flag" value="true" />
+	<param name="video_flag" value="true" />
+	<param name="anonymous_flag" value="false" />
+	<param name="count_flag" value="false" />
+	<param name="status_flag" value="true" />
+	<param name="publish_flag" value="true" />
+	<param name="info_flag" value="true" />
+	<param name="transparent_flag" value="false" />
+	<param name="output_file" value="$(arg output_path)" />
+
+</node>
+
+<node pkg="deepsort_yolo_ros" type="deepsort_yolo_ros.py" name="deepsort_yolo_ros" output="screen">
+
+	<param name="bbox_flag" value="false" />
+	<param name="track_flag" value="true" />
+	<param name="display_flag" value="false" />
+	<param name="video_flag" value="true" />
+	<param name="output_file" value="/main/share/output_videos/yolov4_output.avi" />
+	<param name="yolo_tiny_flag" value="false" />
+	<param name="confidence_threshold" value="0.5" />
+
+</node>
+
+<node pkg="openheadpose_ros" type="openheadpose_ros" name="openheadpose_ros" output="screen">
+
+       <param name="pose_model" value="BODY_25" />
+       <!-- <param name="pose_model" value="COCO" />-->
+       <param name="draw_openpose" value="false" />
+       <param name="draw_headpose" value="true" />
+       <param name="net_resolution" value="-1x368" />
+       <param name="openpose_model_folder" value="/openpose/models/" />
+       <param name="openheadpose_model_folder" value="/openheadpose/models/" />
+
+       <param name="display_flag" value="false" />
+       <param name="video_flag" value="false" />
+       <param name="info_flag" value="false" />
+
+       <param name="output_file" value="/main/share/openheadpose.avi" />
+
+</node>
+
+</launch>
+
+
+

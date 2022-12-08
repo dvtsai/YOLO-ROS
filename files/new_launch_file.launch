@@ -1,0 +1,12 @@
+<launch>
+
+<node pkg="darknet_ros" type="darknet.py" name="darknet_ros" output="screen">
+
+	<param name="display_flag" value="true" />
+	<param name="video_flag" value="true" />
+	<param name="output_file" value="/main/share/output_video.avi" />
+	<param name="confidence_threshold" value="0.2" />
+
+</node>
+
+</launch>
