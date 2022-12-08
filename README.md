@@ -73,6 +73,7 @@ self.allowed_classes = ['traffic light']
 self.class_colours = {"traffic light": (255, 255, 0)}
  ```
 Now, try giving the wrapper the same input as before. Since we are now detecting traffic lights, the output AVI file should look something like this:
+
 <img src="images/track_traffic_lights.png" alt="track_traffic_lights">
 
 ### Write a new package to classify traffic lights
@@ -126,6 +127,7 @@ Inside of "dataset," add the dataset you trained the model on. You should compil
 Lastly, we need to import our custom trained weights and config files into the darknet_ros folder. Inside of the darknet_ros folder, create a folder called "core." Inside this folder, we should place our custom trained weights and config files for our YOLO model. Please make sure the config file is written in Python! For more information on config files in Python, see [here](https://medium.com/analytics-vidhya/how-to-write-configuration-files-in-your-machine-learning-project-47bc840acc19).
 
 Now, try giving the wrapper the same input as before. Since we are now classifying traffic lights, the output AVI file should look something like this:
+
 <img src="images/classify_traffic_lights.png" alt="classify_traffic_lights">
 
 ## Problems and Potential Solutions
