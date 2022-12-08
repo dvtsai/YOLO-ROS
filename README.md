@@ -1,6 +1,6 @@
 # Sensor Fusion: YOLOv4 + V2X Integration on ROS
 
-This repository contains the code for our project during the second semester of TechLab @ MCity with [ADASTEC](https://www.adastec.com/). ADASTEC specializes in the development of L4 autonomated driving software platforms and partners with OEMs to deliver [fully electric, L4 automated buses](https://msutoday.msu.edu/news/2022/new-electric-autonomous-bus-accepts-riders). As part of our Fall 2022 project, we integrated a deep learning model for traffic light detection and classification into a ROS environment for the goal of sensor fusion with V2X SPaT messages. Sensor fusion with camera data (deep learning) and SPaT messages (V2I infrastructure) creates a more robust traffic light handling system. 
+This repository contains the code for our project during the second semester of TechLab at MCity with [ADASTEC](https://www.adastec.com/). ADASTEC specializes in the development of L4 autonmated driving software platforms and partners with OEMs to deliver [fully electric, L4 automated buses](https://msutoday.msu.edu/news/2022/new-electric-autonomous-bus-accepts-riders). As part of our Fall 2022 project, we integrated a deep learning model for traffic light detection and classification into a ROS environment for the goal of sensor fusion with V2X SPaT messages. Sensor fusion with camera data (deep learning) and SPaT messages (V2I infrastructure) creates a more robust traffic light handling system. 
 
 The team members for this project are: 
 - Daphne Tsai (dvtsai@umich.edu)
@@ -76,7 +76,7 @@ Now, try giving the wrapper the same input as before. Since we are now detecting
 
 <img src="images/track_traffic_lights.png" alt="track_traffic_lights">
 
-### Write a new package to classify traffic lights
+### Step 3: Write a new package to classify traffic lights
 We would like the classify traffic lights using our own custom YOLOv4 model, as this provides the necessary information to fuse with data collected from SPaT messages. To do this, we need to write a new package and reroute existing packages inside of the wrapper. We need to write a node package inside of the video playback launch file to read the input from darknet. Navigate to pedestrian_analyser/launch/pedestrian_analyser_system_video.launch. 
 
 ```
